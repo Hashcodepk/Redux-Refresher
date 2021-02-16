@@ -1,12 +1,16 @@
+import { ActionTypes } from "./constants";
+
 const defaultState = {
-    user: ["No User!"]
+  users: [],
 };
 
 const homePageReducer = (state = defaultState, action) => {
-    switch(action.type) {
-        default:
-            return state;
-    }
-}
+  switch (action.type) {
+    case ActionTypes.SET_USERS:
+      return { ...state, users: action.payload };
+    default:
+      return state;
+  }
+};
 
 export default homePageReducer;
